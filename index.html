@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>계산기 앱</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        background: #fff;
+        padding-top: 50px;
+      }
+
+      h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      .calculator {
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      input[type="text"] {
+        width: 240px;
+        height: 45px;
+        font-size: 24px;
+        padding: 10px;
+        text-align: right;
+        margin-bottom: 15px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        box-sizing: border-box; /* ✅ padding 포함해서 정확한 크기 계산 */
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 60px);
+        gap: 8px;
+        justify-content: center;
+      }
+
+      button {
+        font-size: 20px;
+        padding: 14px;
+        border: none;
+        background: #f0f0f0;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.15s ease;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      button:hover {
+        background: #e0e0e0;
+      }
+
+      .clear {
+        grid-column: span 4;
+        background: #f44336;
+        color: white;
+        font-weight: bold;
+        padding: 16px;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📱 계산기 앱</h1>
+
+    <div class="calculator">
+      <!-- 🖥️ 화면에 계산식이 나오는 부분 -->
+      <input type="text" id="표시창" disabled />
+
+      <!-- 🔘 버튼들 -->
+      <div class="buttons">
+        <button onclick="입력하기('7')">7</button>
+        <button onclick="입력하기('8')">8</button>
+        <button onclick="입력하기('9')">9</button>
+        <button onclick="입력하기('/')">÷</button>
+
+        <button onclick="입력하기('4')">4</button>
+        <button onclick="입력하기('5')">5</button>
+        <button onclick="입력하기('6')">6</button>
+        <button onclick="입력하기('*')">×</button>
+
+        <button onclick="입력하기('1')">1</button>
+        <button onclick="입력하기('2')">2</button>
+        <button onclick="입력하기('3')">3</button>
+        <button onclick="입력하기('-')">−</button>
+
+        <button onclick="입력하기('0')">0</button>
+        <button onclick="입력하기('.')">.</button>
+        <button onclick="계산하기()">=</button>
+        <button onclick="입력하기('+')">+</button>
+
+        <button class="clear" onclick="지우기()">C</button>
+      </div>
+    </div>
+
+    <script>
+      //  표시창(입력창)을 변수로 가져오기
+      const 표시창 = document.getElementById("표시창");
+
+      // [입력하기 함수] 버튼을 누르면 작동!
+      function 입력하기(값) {
+        const 마지막글자 = 표시창.value.slice(-1); // 마지막 글자 추출
+
+        // 연산자 입력 제한
+        if (["+", "-", "*", "/"].includes(값)) {
+          if (표시창.value === "") return; // 시작할 때 연산자 못 쓰게 막기
+          if (["+", "-", "*", "/"].includes(마지막글자)) {
+            // 연속된 연산자 입력이면 → 마지막 글자를 새 걸로 바꾸기
+            표시창.value = 표시창.value.slice(0, -1) + 값;
+            return;
+          }
+        }
+
+        //  소수점 중복 방지
+        if (값 === ".") {
+          const 조각들 = 표시창.value.split(/[+\-*/]/); // 연산자로 분리
+          const 마지막숫자 = 조각들[조각들.length - 1]; // 마지막 숫자 확인
+          if (마지막숫자.includes(".")) return; // 이미 소수점 있으면 추가 금지
+        }
+
+        // 조건 통과했으면 값 추가
+        표시창.value += 값;
+      }
+
+      // [계산하기 함수] = 버튼 누르면 작동
+      function 계산하기() {
+        try {
+          표시창.value = eval(표시창.value); // 수식 계산
+        } catch {
+          표시창.value = "오류"; // 계산 실패 시 오류 출력
+        }
+      }
+
+      //  [지우기 함수] C 버튼 누르면 입력값 삭제
+      function 지우기() {
+        표시창.value = ""; // 표시창을 비워줌
+      }
+    </script>
+  </body>
+</html>
