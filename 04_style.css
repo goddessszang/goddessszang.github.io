@@ -78,3 +78,18 @@ h1 {
   margin-bottom: 5px;
   color: #000;
 }
+
+@media (max-width: 768px) {
+  .emotion-letter {
+    font-size: 1.4rem;
+  }
+
+  .emotion-list p {
+    font-size: 0.9rem;
+  }
+
+  .emotion-list li {
+    flex: 1;
+    min-width: 60px;
+  }
+}
