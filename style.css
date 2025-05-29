@@ -1,0 +1,216 @@
+/* index style.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Pretendard", sans-serif;
+  background-color: #fff;
+  color: #222;
+  text-align: center;
+}
+
+.container {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+/* 메인페이지 제목*/
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* 설명 문구 */
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+/* 버튼 스타일 */
+#start-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#start-btn:hover {
+  background-color: #333;
+}
+
+/* 메인페이지 z패밀리이미지*/
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+/* 감정 선택 페이지 스타일 */
+.preview {
+  margin-top: 10px;
+}
+
+.emotion-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.emotion-list li {
+  flex: 1;
+  min-width: 80px;
+}
+
+.emotion-letter {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .emotion-letter {
+    font-size: 1.4rem;
+  }
+
+  .emotion-list p {
+    font-size: 0.9rem;
+  }
+
+  .emotion-list li {
+    flex: 1;
+    min-width: 60px;
+  }
+}
+
+/*text 보기 버튼 스타일 */
+#choices {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#choices button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  max-width: 80%;
+  width: 100%;
+}
+
+#choices button:hover {
+  background-color: #f2f2f2;
+  border-color: #888;
+}
+
+/* 모바일 화면에서 버튼 크기 조정 */
+@media (max-width: 768px) {
+  #choices button {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    max-width: 90%;
+  }
+}
+
+/* 이전버튼, 다음버튼 스타일 */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.button-group button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+/* 버튼 별 색상 스타일 */
+#next-btn {
+  background-color: #000;
+  color: #fff;
+}
+
+#next-btn:hover {
+  background-color: #333;
+}
+
+#prev-btn {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+#prev-btn:hover {
+  background-color: #f2f2f2;
+}
+
+/* 결과 페이지 캐릭터 이미지 크기 제한 */
+#result-img {
+  max-width: 300px;
+  width: 80%;
+  height: auto;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.result-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.result-buttons button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+}
+
+/* 다시 테스트하기 버튼 스타일 */
+.result-buttons .retry {
+  background-color: #000;
+  color: #fff;
+}
+
+.result-buttons .retry:hover {
+  background-color: #333;
+}
+
+/* 공유하기 버튼 스타일 */
+.result-buttons .share {
+  background-color: #f2f2f2;
+  color: #222;
+  border: 2px solid #ccc;
+}
+
+.result-buttons .share:hover {
+  background-color: #e2e2e2;
+}
+
