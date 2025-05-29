@@ -29,7 +29,7 @@ body {
   animation: float 2s infinite ease-in-out;
 }
 
-/* 살짝 떠다니는 느낌 주기  */
+/* 살짝 떠다니는 느낌 주기 (선택) */
 @keyframes float {
   0%,
   100% {
@@ -39,7 +39,6 @@ body {
     transform: translateY(-3px);
   }
 }
-
 
 /* 메인페이지 제목*/
 h1 {
@@ -121,6 +120,36 @@ h1 {
   }
 }
 
+/* 질문 번호 (진행 표시) */
+#progress {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--pink); /*  메인컬러 */
+  margin-bottom: 12px;
+  animation: pulse 1.8s infinite;
+}
+
+/* 질문 텍스트 */
+#question {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* 살짝 반짝이는 애니메이션 */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
 /*text 보기 버튼 스타일 */
 #choices {
   display: flex;
