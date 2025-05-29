@@ -29,7 +29,7 @@ body {
   animation: float 2s infinite ease-in-out;
 }
 
-/* 살짝 떠다니는 느낌 주기 (선택) */
+/* 살짝 떠다니는 느낌 주기  */
 @keyframes float {
   0%,
   100% {
