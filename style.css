@@ -1,4 +1,4 @@
-/* index style.css */
+/* ⚠️ index style.css */
 
 body {
   margin: 0;
@@ -120,6 +120,7 @@ h1 {
   }
 }
 
+/* ⚠️ test style.css */
 /* 질문 번호 (진행 표시) */
 #progress {
   font-size: 1rem;
@@ -232,6 +233,50 @@ h1 {
   background-color: #f2f2f2;
 }
 
+/* ⚠️ result style.css */
+
+/* 결과페이지 베타뱃지 스타일*/
+.beta-badge {
+  display: inline-block;
+  background-color: #ff4d4f;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  animation: float 2s infinite ease-in-out;
+}
+
+/* 결과페이지 배타뱃지 빨강 살짝 떠오르는 느낌 */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* 결과페이지 배타 설명 스타일 */
+.beta-label {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #888;
+  background: #f9f9f9;
+  padding: 12px 18px;
+  border-radius: 16px;
+  border: 1px dashed #ddd;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  font-style: italic;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
 /* 결과 페이지 캐릭터 이미지 크기 제한 */
 #result-img {
   max-width: 300px;
@@ -256,31 +301,6 @@ h1 {
   cursor: pointer;
   transition: background-color 0.2s ease;
   border: none;
-}
-
-/* 결과페이지 베타뱃지 스타일*/
-.beta-badge {
-  display: inline-block;
-  background-color: #ff4d4f;
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: bold;
-  padding: 4px 10px;
-  border-radius: 20px;
-  letter-spacing: 1px;
-  margin-bottom: 16px;
-  animation: float 2s infinite ease-in-out;
-}
-
-/* 살짝 떠오르는 느낌 */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-2px);
-  }
 }
 
 /* 다시 테스트하기 버튼 스타일 */
