@@ -258,6 +258,31 @@ h1 {
   border: none;
 }
 
+/* 결과페이지 베타뱃지 스타일*/
+.beta-badge {
+  display: inline-block;
+  background-color: #ff4d4f;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  animation: float 2s infinite ease-in-out;
+}
+
+/* 살짝 떠오르는 느낌 */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
 /* 다시 테스트하기 버튼 스타일 */
 .result-buttons .retry {
   background-color: #000;
